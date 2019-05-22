@@ -1,12 +1,22 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-#DEFINI
-x = np.linspace(0, 1 * np.pi, 10)
-markerline, stemlines, baseline = plt.stem(x, np.sin((np.pi/2)*x), '-')
+def Dibuja():
+    #DEFINIMOS LOS PARAMETROS A DIBUJAR
+    N = 50
+    inicio = -8
+    fin = 8
+    Eje_X = np.linspace(inicio, fin, N, endpoint=True)
+    Eje_Y = np.zeros(N)
 
-#DEFINIMOS LA BASE DE LA RECTA CON EL COLOR Y SU GROSOR
-plt.setp(baseline, color='r', linewidth=1)
+    #USAMOS STEM PARA DIBUJAR DELTAS
+    markerline, stemlines, baseline = plt.stem(Eje_X, np.cos((5*np.pi/4)*Eje_X), '-')
 
-#MOSTRAMOS LA GRAFICA
-plt.show()
+    #DEFINIMOS LA BASE DE LA RECTA CON EL COLOR Y SU GROSOR
+    plt.setp(baseline, color='r', linewidth=1)
+
+    #MOSTRAMOS LA GRAFICA
+    plt.show()
+
+if __name__ == "__main__":
+    Dibuja()
